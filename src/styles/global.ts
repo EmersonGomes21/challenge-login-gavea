@@ -1,6 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +14,13 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: 'Inter',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+
+  button:focus, button:hover{
+    opacity: 0.9;
+    border: 1px solid #ccc;
+    transition: all linear 0.5;
   }
 
 `

@@ -7,11 +7,11 @@ interface Props {
   color?: string;
   children?: React.ReactNode;
   height?: string;
-  onClick: () => void;
+  onClick?: () => void;
   radius?: string
   width?: string;
   fontSize?: string;
 }
-const Button : React.FC<Props> = ({ children, onClick }) => <S.Button type="button" onClick={onClick}> <S.ButtonTitle>{children}</S.ButtonTitle> </S.Button>
+const ButtonSecundary : React.FC<Props> = ({ children, onClick }) => <S.Button type="button" onClick={onClick}> <S.ButtonTitle>{children}</S.ButtonTitle> </S.Button>
 
-export default Button
+export default ButtonSecundary

@@ -17,3 +17,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
+
+
+//gerar os arquivos
+yarn generate Component

@@ -1,13 +1,7 @@
-import useAuth from './../utils/hooks/useAuth';
+import WelcomeC from '../components/Welcome';
 
-export default function Home() {
-  const {user, signin}  =  useAuth();
-  console.log('user', user);
-
+export default function Welcome() {
   return (
-    <div>
-    <h1>Home</h1>
-    <button onClick={() => signin()}> Entrar com github</button>
-    </div>
+   <WelcomeC />
   )
 }

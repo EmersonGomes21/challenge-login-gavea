@@ -4,6 +4,7 @@ import firebase from '../lib/firebase';
 
 const AuthContext = createContext();
 
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -11,12 +12,12 @@ export function AuthProvider({ children }) {
   const signin = async ()  => {
     try {
       setLoading(true);
-      return firebase
+      return  await firebase
         .auth()
         .signInWithPopup(new firebase.auth.GithubAuthProvider())
         .then((response) => {
           setUser(response.user);
-          Router.push('/dashboard');
+          Router.push('/home');
         });
 
     } finally {

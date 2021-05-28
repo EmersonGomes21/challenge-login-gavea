@@ -1,4 +1,4 @@
-import { Main } from 'components/Main/styles'
+import  Main  from 'components/Main'
 import React from 'react'
 import * as S from './styles'
 

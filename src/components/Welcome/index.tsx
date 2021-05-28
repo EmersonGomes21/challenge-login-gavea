@@ -1,34 +1,29 @@
-
-import Router from 'next/router';
+import Router from 'next/router'
 
 import Button from 'components/Button'
 import ButtonSecundary from 'components/ButtonSecundary'
 import * as S from './styles'
-import { Main } from 'components/Main/styles';
+import Main from 'components/Main/'
 
 const Welcome = () => (
   <S.Wrapper>
-
-   <S.Background src="/img/background.png" alt="background img" />
-
+    <S.Background src="/img/background.png" alt="background img" />
 
     <Main>
-    <S.Logo src="/img/Logo-Gavea.png" alt="logo gavea" />
+      <S.Logo src="/img/Logo-Gavea.png" alt="logo gavea" />
 
-     <S.WrapperSectionWelcome>
-     <S.WelcomeTitle>
-     Bem-vindo a sua bolsa digital de commodities
-     </S.WelcomeTitle>
+      <S.WrapperSectionWelcome>
+        <S.WelcomeTitle>
+          Bem-vindo a sua bolsa digital de commodities
+        </S.WelcomeTitle>
 
-    <Button onClick={() => Router.push('/sigin')}>
-      Entrar
-    </Button>
+        <Button onClick={() => Router.push('/sigin')}>Entrar</Button>
 
-    <ButtonSecundary   onClick={() => Router.push('/register')}>
-     cadastrar
-    </ButtonSecundary>
-     </S.WrapperSectionWelcome>
-     </Main>
+        <ButtonSecundary onClick={() => Router.push('/register')}>
+          cadastrar
+        </ButtonSecundary>
+      </S.WrapperSectionWelcome>
+    </Main>
   </S.Wrapper>
 )
 

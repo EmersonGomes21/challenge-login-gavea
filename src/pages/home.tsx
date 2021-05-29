@@ -1,4 +1,6 @@
+import HomeList from "components/HomeList";
+import { Socket } from "dgram";
 
 export default function Home() {
-  return <h1>Home</h1>
+  return <HomeList />
 }

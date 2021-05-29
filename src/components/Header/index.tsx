@@ -1,9 +1,10 @@
+
 import React from 'react'
 import * as S from './styles'
 
 const Header = () => (
   <S.Wrapper>
-     <h1> Header</h1>
+   <S.Logo src="/img/Logo.svg" alt="logo gavea" />
   </S.Wrapper>
 )
 

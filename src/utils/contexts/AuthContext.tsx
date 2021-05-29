@@ -4,12 +4,27 @@ import firebase from '../lib/firebase';
 
 const AuthContext = createContext();
 
+interface PropsUser {
+  user : [
+   {
+   uid?: string
+   email?: string
+   name?: string
+   token?: string
+   provider?: string
+   photoUrl?: string
+   }
+  ],
+   signin : () => void
+ }
+
 
 
 export function AuthProvider ({
   children
  }: {
    children? : React.ReactNode;
+
  }
 
    )  {
@@ -45,7 +60,7 @@ export function AuthProvider ({
     loading,
     signin,
     signout
-  }}>{children}</AuthContext.Provider>;
+  }} >{children}</AuthContext.Provider>;
 }
 
 export const AuthConsumer = AuthContext.Consumer;

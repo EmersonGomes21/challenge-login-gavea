@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
     transition: all ease-in 0.5s;
   }
 
-  @media(max-width: 380px){
+  @media(max-width: 360px){
   button[type="button"]{
     max-height: 40px;
     font-size: 14px;

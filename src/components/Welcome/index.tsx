@@ -10,7 +10,7 @@ const Welcome = () => (
     <S.Background src="/img/background.png" alt="background img" />
 
     <Main>
-      <S.Logo src="/img/Logo-Gavea.png" alt="logo gavea" />
+      <S.Logo src="/img/Logo.svg" alt="logo gavea" />
 
       <S.WrapperSectionWelcome>
         <S.WelcomeTitle>

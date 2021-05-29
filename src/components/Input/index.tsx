@@ -5,9 +5,9 @@ const Input = ({
   type,
   placeholder,
   icon,
-  classInput,
-  classIconType,
-  classIconPassword
+  classInput = '',
+  classIconType = '',
+  classIconPassword = ''
 }: {
   type: string
   placeholder: string
@@ -31,10 +31,10 @@ const showToggle = () =>{
 }
   return (
     <S.WrapperInput>
-    <S.Input type = { type !== 'password' ? type : typeToggle  }  placeholder={placeholder} className={classInput}/>
-    <S.IconType src={`/icons/${icon}.png`} alt="icon input" className={classIconType}/>
+    <S.Input type = { type !== 'password' ? type : typeToggle  }  placeholder={placeholder} className={`input ${classInput}`}/>
+    <S.IconType src={`/icons/${icon}.svg`} alt="icon input" className={`icon ${classIconType}`}/>
 
-  { type == 'password' && <S.IconTypePassword onClick={() => showToggle()} src={`/icons/showPassword.png`} alt="icon input" className={classIconPassword}/> }
+  { type == 'password' && <S.IconTypePassword onClick={() => showToggle()} src={`/icons/showPassword.svg`} alt="icon input" className={`icon ${classIconPassword}`}/> }
     </S.WrapperInput>
   )
 }

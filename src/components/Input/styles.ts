@@ -20,20 +20,30 @@ font-size: 16px;
 line-height: 107.6%;
 color: #B1BEC2;
 margin-bottom: 15px;
+
+::placeholder,
+  ::-webkit-input-placeholder {
+    color: #B1BEC2;
+  }
+  :-ms-input-placeholder {
+    color: #B1BEC2;
+  }
+
+ &.last {
+   margin-bottom: 30px;
+  }
 `
 
 
 export const IconType = styled.img`
-width: 17px;
-height: 17px;
+font-size: 20px;
 position: absolute;
 left: 20px;
-top: 21px;
+top: 20px;
 `
 
 export const IconTypePassword = styled.img`
-width: 16px;
-height: 13px;
+font-size: 16px;
 position: absolute;
 right: 20px;
 top: 21px;

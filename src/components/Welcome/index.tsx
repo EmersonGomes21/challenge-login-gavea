@@ -17,7 +17,7 @@ const Welcome = () => (
           Bem-vindo a sua bolsa digital de commodities
         </S.WelcomeTitle>
 
-        <Button onClick={() => Router.push('/sigin')}>Entrar</Button>
+        <Button onClick={() => Router.push('/signin')}>Entrar</Button>
 
         <ButtonSecundary onClick={() => Router.push('/register')}>
           cadastrar

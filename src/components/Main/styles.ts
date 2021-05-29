@@ -13,6 +13,6 @@ height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: ${ props => props.justify ?  props.justify : 'space-around' };
-padding: 20px 30px;
+padding:  20px;
 position: relative;
 `

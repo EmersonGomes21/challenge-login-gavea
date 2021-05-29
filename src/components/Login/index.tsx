@@ -18,7 +18,7 @@ const Login = ({ signin } : {
 
      <S.Form>
     <Input  type="email" placeholder="Email" icon="email"/>
-    <Input  type="password" placeholder="Senha" icon="password"/>
+    <Input  type="password" placeholder="Senha" icon="password" classInput="last"/>
      <Button id="button-login" onClick={ () => signin()}>Entrar</Button>
      </S.Form>
 
@@ -26,7 +26,6 @@ const Login = ({ signin } : {
   </Main>
 
   <FooterRedirect href="/register" primaryText="Não" name="Criar conta" />
-  <FooterRedirect href="/sigin" primaryText="Já" name="Faça o login" />
 </>
 )
 

@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -20,16 +20,32 @@ const GlobalStyles = createGlobalStyle`
   button:focus, button:hover{
     opacity: 0.9;
     border: 1px solid #ccc;
-    transition: all linear 0.5;
+    transition: all ease-in 0.5s;
   }
 
-input:-ms-input-placeholder, input::-webkit-input-placeholder, input::placeholder, input::-moz-placeholder, input::-moz-placeholder{
-  color: #B1BEC2;
-}
+  @media(max-width: 380px){
+  button[type="button"]{
+    max-height: 40px;
+    font-size: 14px;
+  }
+  input[type="email"],  input[type="password"], input[type="text"] {
+    max-height: 40px;
+    font-size: 12px;
+  }
 
-.styles__WrapperInput-sc-7g6ata-0:nth-child(2){
-  margin-bottom: 30px !important;
-}
+  input[type="email"] ~ img.icon,  input[type="password"] ~ img.icon, input[type="text"] ~ img.icon {
+   top: 12px;
+   font-size: 10px;
+   width: 13px;
+   height: 15px;
+  }
+
+
+
+
+
+
+ }
 
 `
 

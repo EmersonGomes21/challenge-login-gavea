@@ -14,7 +14,7 @@ text-align: center;
 margin: 0 auto;
 margin-top: -7vh;
 ${cssDefualt}
-z-index: 5;
+z-index: 9999;
 `
 export const Primarytext = styled.span`
 color: #748C94;

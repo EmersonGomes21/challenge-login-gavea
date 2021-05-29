@@ -1,10 +1,15 @@
+import Header from 'components/Header'
+import Main from 'components/Main'
 import React from 'react'
 import * as S from './styles'
 
 const HomeList = () => (
-  <S.Wrapper>
-     <h1> HomeList</h1>
-  </S.Wrapper>
+     <>
+    <Header />
+
+    <Main>
+    </Main>
+   </>
 )
 
 export default HomeList

@@ -5,8 +5,15 @@ import firebase from '../lib/firebase';
 const AuthContext = createContext();
 
 
-export function AuthProvider ({children} )  {
-  const [user, setUser] = useState(null);
+
+export function AuthProvider ({
+  children
+ }: {
+   children? : React.ReactNode;
+ }
+
+   )  {
+  const [user, setUser] = useState< null | {}> (null);
   const [loading, setLoading] = useState(true);
 
   const signin = async ()  => {

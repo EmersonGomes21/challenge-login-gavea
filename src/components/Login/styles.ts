@@ -1,8 +1,5 @@
 import styled from 'styled-components'
 
-
-
-
 export const WrapperTitle = styled.div``
 
 export const GreetingTitle = styled.h1`

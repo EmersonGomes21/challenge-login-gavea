@@ -20,6 +20,7 @@ export function AuthProvider ({
   const [user, setUser] = useState<Props>();
   const [loading, setLoading] = useState(true);
 
+
   const signin = async ()  => {
     try {
       setLoading(true);

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-
+interface PropsButtonTitle {
+  fontSize?: string;
+}
 export const Button = styled.button`
 width: 100%;
 height: 100%;
@@ -10,7 +12,7 @@ border: none;
 border-radius: 4px;
 `
 
-export const ButtonTitle = styled.span`
+export const ButtonTitle = styled.span<PropsButtonTitle>`
 color: #fff;
 font-family: Inter;
 font-weight: bold;

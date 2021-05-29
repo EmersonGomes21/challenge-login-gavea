@@ -27,6 +27,10 @@ input:-ms-input-placeholder, input::-webkit-input-placeholder, input::placeholde
   color: #B1BEC2;
 }
 
+.styles__WrapperInput-sc-7g6ata-0:nth-child(2){
+  margin-bottom: 30px !important;
+}
+
 `
 
 export default GlobalStyles;

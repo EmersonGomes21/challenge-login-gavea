@@ -19,9 +19,10 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-    <GlobalStyles />
+      <GlobalStyles />
       <AuthProvider>
       <Component {...pageProps} />
+
       </AuthProvider>
 
       </>

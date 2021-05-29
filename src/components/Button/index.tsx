@@ -11,7 +11,8 @@ interface Props {
   radius?: string
   width?: string;
   fontSize?: string;
+  id?: string;
 }
-const Button : React.FC<Props> = ({ children, onClick }) => <S.Button type="button" onClick={onClick}> <S.ButtonTitle>{children}</S.ButtonTitle> </S.Button>
+const Button : React.FC<Props> = ({ children, onClick, id ,  fontSize }) => <S.Button type="button" onClick={onClick} id={id} > <S.ButtonTitle fontSize={fontSize}>{children}</S.ButtonTitle> </S.Button>
 
 export default Button

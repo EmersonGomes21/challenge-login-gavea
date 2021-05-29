@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.main``
+
+
 
 export const WrapperTitle = styled.div``
 
@@ -10,6 +11,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 35px;
 line-height: 42px;
+color: #FF6900;
 `
 export const WelcomeTitle = styled.h1`
 font-family: Inter;
@@ -24,5 +26,7 @@ display: flex;
 flex-direction: column;
 width: 100%;
 height: 50%;
+justify-content: start;
+margin-top: 30px;
 `
 

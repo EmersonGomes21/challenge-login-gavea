@@ -1,12 +1,16 @@
 import Login from 'components/Login'
 import useAuth from './../utils/hooks/useAuth'
 
+
 export default function SigIn() {
+  const { user, signin } = useAuth();
 
-  const { user, signin } = useAuth()
-
-  console.log('user', user)
+  console.log('user', user);
   return (
-     <Login />
+    <>
+     <Login signin = {signin} />
+
+
+     </>
   )
 }

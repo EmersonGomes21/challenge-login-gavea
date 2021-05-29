@@ -4,29 +4,17 @@ import firebase from '../lib/firebase';
 
 const AuthContext = createContext();
 
-interface Props {
-    uid: string;
-    email: string;
-    name: string;
-    token: string;
-    provider: string;
-    photoUrl: string;
-}
-export function AuthProvider ({
-   children
-  }: {
-    children: React.ReactNode
-  } )  {
-  const [user, setUser] = useState<Props>();
-  const [loading, setLoading] = useState(true);
 
+export function AuthProvider ({children} )  {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const signin = async ()  => {
     try {
       setLoading(true);
       return  await firebase
         .auth()
-        .signInWithPopup(new firebase.auth.GithubAuthProvider())
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then((response) => {
           setUser(response.user);
           Router.push('/home');

@@ -23,6 +23,10 @@ const GlobalStyles = createGlobalStyle`
     transition: all linear 0.5;
   }
 
+input:-ms-input-placeholder, input::-webkit-input-placeholder, input::placeholder, input::-moz-placeholder, input::-moz-placeholder{
+  color: #B1BEC2;
+}
+
 `
 
 export default GlobalStyles;

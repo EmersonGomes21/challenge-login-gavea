@@ -21,12 +21,12 @@ const HomeList = () => {
       <Main justify="flex-start">
         <CardUser />
         <S.WrapperLabels>
-          <S.Label>Part</S.Label>
-          <S.Label>Pag</S.Label>
-          <S.Label>Ton</S.Label>
-          <S.Label>R$</S.Label>
+          <S.Label className="part">Part</S.Label>
+          <S.Label className="pag">Pag</S.Label>
+          <S.Label className="ton">Ton</S.Label>
+          <S.Label className="value">R$</S.Label>
         </S.WrapperLabels>
-
+<S.WrapperCardCommodities>
         {data.map((item, indice) => (
           <CardCommodities
             key={indice}
@@ -38,6 +38,7 @@ const HomeList = () => {
             iconUrl={item.iconUrl}
           />
         ))}
+        </S.WrapperCardCommodities>
       </Main>
     </>
   )

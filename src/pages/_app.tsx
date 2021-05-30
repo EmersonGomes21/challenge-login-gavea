@@ -1,7 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
-// import { AuthProvider } from '../utils/contexts/AuthContext';
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -18,12 +17,8 @@ function App({ Component, pageProps }: AppProps) {
           content="Challenge Login Gavea"
         />
       </Head>
-
       <GlobalStyles />
-
       <Component {...pageProps} />
-      {/* <AuthProvider>
-      </AuthProvider> */}
 
       </>
   )

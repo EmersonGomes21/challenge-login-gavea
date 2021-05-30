@@ -4,9 +4,13 @@ export const WrapperCardCommodities = styled.main`
 overflow-y: scroll;
 max-height: 45rem;
 padding-bottom: 5rem;
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
 &::-webkit-scrollbar {
 	display: none;
 }
+
+
 `
 export const WrapperLabels = styled.div`
 display: flex;

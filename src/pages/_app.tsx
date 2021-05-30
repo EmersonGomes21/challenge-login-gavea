@@ -1,7 +1,14 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head'
+import { useEffect } from 'react';
 import GlobalStyles from 'styles/global'
+import api from 'utils/lib/api';
 function App({ Component, pageProps }: AppProps) {
+
+  useEffect(() => {
+    //Verifica se o usuario está autenticado e faz o redirecionamento
+    api.authStateListener('/home', '/');
+  }, [])
   return (
     <>
     <Head>

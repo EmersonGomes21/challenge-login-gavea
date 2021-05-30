@@ -5,22 +5,45 @@ import  Main  from 'components/Main'
 import React, { useState } from 'react'
 import * as S from './styles'
 
-import api from '../../utils/lib/api'
-const Login = ( {
+import api from 'utils/lib/api'
+const Login = (
 
-}
 ) =>  {
     //definem valores dos inputs através do Onchange
-    const [user, setUser] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const submit = async (e : React.MouseEvent<HTMLElement>) => {
+    const loginEmailPassword = async (e : React.MouseEvent<HTMLElement>) => {
       e.preventDefault();
-      console.log('result email', user);
+      console.log('result email', email);
       console.log('result email', password);
-      let result =   await api.emailPasswordSignin(user, password);
-      console.log(result);
+
+      let res  =   await api.emailPasswordSignin(email, password);
+
+      console.log('res', res);
+      // const newUser = {
+      //   id: u.uid,
+      //   name: u.displayName,
+      //   avatar: u.photoURL,
+      //   email: u.email
+      // }
+
+
+      // if (typeof window !== "undefined") {
+      //   const setUserStorage = () => {
+      //     const userDataJSON = JSON.stringify(newUser);
+      //     if (newUser) {
+      //        localStorage.setItem('@user-data', userDataJSON);
+      //        localStorage.setItem('@weser/connected', 'true');
+      //     }
+      //   }
+      //   setUserStorage();
+      //   }
+
     }
+
+     // console.log(localStorage.getItem('@user-data'));
+
 
   return (
     <>
@@ -31,9 +54,9 @@ const Login = ( {
        </S.WrapperTitle>
 
        <S.Form>
-      <Input  type="email" placeholder="Email" icon="email" onChange={(e) => setUser(e.target.value)}/>
+      <Input  type="email" placeholder="Email" icon="email" onChange={(e) => setEmail(e.target.value)}/>
       <Input  type="password" placeholder="Senha" icon="password" classInput="last" onChange={e => setPassword(e.target.value)} />
-       <Button  id="button-login" onClick={ submit }  />
+       <Button  id="button-login" onClick={ loginEmailPassword }  />
        </S.Form>
 
     </Main>

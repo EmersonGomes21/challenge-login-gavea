@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CardCommodities from 'components/CardCommodities'
 import CardUser from 'components/CardUser'
 import Header from 'components/Header'
 import Main from 'components/Main'
 import * as S from './styles'
 import data from './content';
+
 const HomeList = () => {
-useEffect(() => {
-
-
-}, [])
 
   return (
     <>

@@ -13,7 +13,11 @@ const GlobalStyles = createGlobalStyle`
   }
   html, body, #__next {
     height: 100%;
-
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+	   display: none;
+    }
   }
   body {
     font-family: 'Inter',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
@@ -23,6 +27,9 @@ const GlobalStyles = createGlobalStyle`
     opacity: 0.9;
     border: 1px solid #ccc;
     transition: all ease-in 0.5s;
+  }
+  button, a[href*="/"]{
+   cursor: pointer;
   }
 
   @media(max-width: 360px){

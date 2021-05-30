@@ -15,6 +15,11 @@ margin: 0 auto;
 margin-top: -7vh;
 ${cssDefualt}
 z-index: 9999;
+
+/*Ajuste de responsividade em dispositivos com altura maior de tela */
+@media(min-height: 750px) and (max-width: 450px){
+  margin-top: -12vh;
+}
 `
 export const Primarytext = styled.span`
 color: #748C94;

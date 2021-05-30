@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {MouseEvent} from 'react'
 import * as S from './styles'
 
 
@@ -7,12 +7,12 @@ interface Props {
   color?: string;
   buttonText?: string;
   height?: string;
-  onClick: () => void;
-  radius?: string
+  onClick(event: React.MouseEvent<HTMLElement>):void
+  radius?: string;
   width?: string;
   fontSize?: string;
   id?: string;
 }
-const Button : React.FC<Props> = ({  buttonText  = 'Entrar', onClick, id ,  fontSize }) => <S.Button type="button" onClick={onClick} id={id} > <S.ButtonTitle fontSize={fontSize}>{buttonText}</S.ButtonTitle> </S.Button>
+const Button : React.FC<Props>  = ({  buttonText  = 'Entrar', id ,  fontSize, onClick }  )  => <S.Button type="submit"  onClick={onClick} id={id} > <S.ButtonTitle fontSize={fontSize}>{buttonText}</S.ButtonTitle> </S.Button>
 
 export default Button

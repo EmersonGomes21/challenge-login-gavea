@@ -12,6 +12,6 @@ interface Props {
   width?: string;
   fontSize?: string;
 }
-const ButtonSecundary : React.FC<Props> = ({ children, onClick }) => <S.Button type="button" onClick={onClick}> <S.ButtonTitle>{children}</S.ButtonTitle> </S.Button>
+const ButtonSecundary : React.FC<Props> = ({ children, onClick }) => <S.Button type="submit" onClick={onClick}> <S.ButtonTitle>{children}</S.ButtonTitle> </S.Button>
 
 export default ButtonSecundary

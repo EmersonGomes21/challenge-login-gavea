@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
-import { AuthProvider } from '../utils/contexts/AuthContext';
+// import { AuthProvider } from '../utils/contexts/AuthContext';
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -20,10 +20,10 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <GlobalStyles />
-      <AuthProvider>
-      <Component {...pageProps} />
 
-      </AuthProvider>
+      <Component {...pageProps} />
+      {/* <AuthProvider>
+      </AuthProvider> */}
 
       </>
   )

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 import * as S from './styles'
 
 const Input = ({
@@ -7,7 +7,8 @@ const Input = ({
   icon,
   classInput = '',
   classIconType = '',
-  classIconPassword = ''
+  classIconPassword = '',
+  ...rest
 }: {
   type: string
   placeholder: string
@@ -16,6 +17,7 @@ const Input = ({
   classInput?: string
   classIconType?: string
   classIconPassword?: string
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }) => {
 const [ togglePassword, setTogglePassword] = useState(false);
 const [ typeToggle, setTypeToggle] = useState('password');
@@ -31,7 +33,7 @@ const showToggle = () =>{
 }
   return (
     <S.WrapperInput>
-    <S.Input type = { type !== 'password' ? type : typeToggle  }  placeholder={placeholder} className={`input ${classInput}`}/>
+    <S.Input {...rest} type = { type !== 'password' ? type : typeToggle  }  placeholder={placeholder} className={`input ${classInput}`}/>
     <S.IconType src={`/icons/${icon}.svg`} alt="icon input" className={`icon ${classIconType}`}/>
 
   { type == 'password' && <S.IconTypePassword onClick={() => showToggle()} src={`/icons/showPassword.svg`} alt="icon input" className={`icon ${classIconPassword}`}/> }

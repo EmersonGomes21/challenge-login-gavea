@@ -2,6 +2,8 @@ import styled from 'styled-components'
 interface PropsButtonTitle {
   fontSize?: string;
 }
+
+
 export const Button = styled.button`
 width: 100%;
 height: 100%;

@@ -9,7 +9,9 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
   "dependencies": {
+    "@types/js-cookie": "^2.2.6",
     "firebase": "^8.6.2",
+    "js-cookie": "^2.2.1",
     "next": "10.0.4",
     "next-pwa": "^5.0.6",
     "prop-types": "^15.7.2",

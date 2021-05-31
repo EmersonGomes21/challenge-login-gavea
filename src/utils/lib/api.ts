@@ -1,6 +1,5 @@
 import firebase from 'firebase/app';
 import 'firebase/firebase-auth';
-import 'firebase/firebase-firestore';
 import provider from './firebaseConfig';
 import Router from 'next/router';
 
@@ -10,8 +9,9 @@ if (!firebase.apps.length) {
 }
 
 export default {
+
   emailPasswordRegister: async (email: string, password: string, name: string) => {
-    await firebase.auth().createUserWithEmailAndPassword(email, password)
+    const result =  await firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
 
@@ -27,6 +27,8 @@ export default {
           }).catch(function (error) {
             console.log('ERRO AO ATUALIZAR NOME')
           });
+
+
         }
 
         Router.push('/signin');
@@ -37,13 +39,16 @@ export default {
         var errorMessage = error.message;
         return errorMessage
       });
+
+      return result
   },
+
+  //criar o login
   emailPasswordSignin: async (email: string, password: string) => {
      const result = await firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         var user = userCredential.user;
        // console.log('Logado com sucesso', user);
-        Router.push('/home');
 
         //Seta o primeiro nome do usuario logado no localstorage
         if (user?.displayName !== null) {
@@ -64,16 +69,16 @@ export default {
         var errorMessage = error.message;
         console.log('ERROR CODE', errorCode);
         console.log('ERROR MESSAGE', errorMessage);
-        return errorMessage
+
       });
       return result;
   },
 
-  loGout: async () => {
+  loGout: async (route?: string) => {
     await firebase.auth().signOut().then(() => {
       window.localStorage.removeItem('@gavea-name-user');
       window.localStorage.removeItem('@gavea-logado');
-       Router.push('/');
+         route ?    Router.push(`${route}`) :  Router.push('/')
     }).catch((error) => {
       var errorMessage = error.message;
       return errorMessage

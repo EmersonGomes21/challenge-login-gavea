@@ -15,7 +15,6 @@ const SignUp = () => {
   const [error, setErro] = useState(false)
   const [errorPassword, setErroPassword] = useState(false)
 
-
   const createUser = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
 
@@ -24,20 +23,29 @@ const SignUp = () => {
     console.log('result password', password)
     console.log('result confirmPassword', confirmPassword)
 
+    if( password === ""  || confirmPassword === ""){
+      alert('todos os campos são requeridos!');
+      return
+    }
+
     if (password !== confirmPassword) {
       setErroPassword(true);
       alert('As senhas são divergentes!');
       return
     }
-    if( password.length < 6 || confirmPassword.length < 6){
+    else if( password.length < 6 || confirmPassword.length < 6){
       alert('A senha precisa ter no mínimo 6 caracteres!');
       return
     }
 
-    let result = await api.emailPasswordRegister(email, password, user);
 
+    let result = await api.emailPasswordRegister(email, password, user);
+      if(result.email) {
+        console.log("REDIRECT DO SIGNUP", result.email)
+      api.loGout('/signin');
+     }
      //desloga
-    //  api.loGout();
+
 
   }
 

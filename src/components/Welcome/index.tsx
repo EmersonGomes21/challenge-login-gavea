@@ -4,7 +4,11 @@ import ButtonSecundary from 'components/ButtonSecundary'
 import * as S from './styles'
 import Main from 'components/Main/'
 
-const Welcome = () => (
+const Welcome = () => {
+
+return (
+
+
   <S.Wrapper>
     <S.Background src="/img/background.png" alt="background img" />
 
@@ -25,5 +29,5 @@ const Welcome = () => (
     </Main>
   </S.Wrapper>
 )
-
+}
 export default Welcome

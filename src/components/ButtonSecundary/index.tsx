@@ -7,7 +7,7 @@ interface Props {
   color?: string;
   children?: React.ReactNode;
   height?: string;
-  onClick?: () => void;
+  onClick(event: React.MouseEvent<HTMLElement>):void
   radius?: string
   width?: string;
   fontSize?: string;

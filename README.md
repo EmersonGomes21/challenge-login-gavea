@@ -30,6 +30,7 @@ This project uses lot of stuff as:
 - [Route Restriction]
 - [Persists Authentication JWT + Cookie]
 - [Input Validations And Server Response]
+- [Responsive for Mobile Devices]
 
 
 ## Getting Started

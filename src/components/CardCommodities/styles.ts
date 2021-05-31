@@ -13,8 +13,12 @@ box-shadow: 0px 17px 60px rgba(45, 76, 113, 0.07), 0px 3.79717px 13.4018px rgba(
 border-radius: 4px;
 border: 1px solid #D2E3EF;
 position: relative;
+animation-name: example;
+animation-duration: 1s;
 
 `
+
+
 
 export const Border = styled.div<PropsBorder>`
 height: 100%;

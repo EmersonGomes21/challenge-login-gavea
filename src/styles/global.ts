@@ -47,8 +47,10 @@ const GlobalStyles = createGlobalStyle`
 
    }
 
-
-
+   @keyframes example {
+  0%   { left: 0px; top: 100vw;}
+  100% { left:0px; top:0px;}
+}
 
 
 

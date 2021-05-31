@@ -9,7 +9,9 @@ import ProtectRoute from 'components/ProtectRoute'
 
 const HomeList = () => {
   return (
+
     <ProtectRoute>
+      <>
       <Header />
       <Main justify="flex-start">
         <CardUser />
@@ -33,8 +35,10 @@ const HomeList = () => {
           ))}
         </S.WrapperCardCommodities>
       </Main>
-
+      </>
      </ProtectRoute>
+
+
   )
 }
 

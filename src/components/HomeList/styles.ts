@@ -10,6 +10,10 @@ scrollbar-width: none;  /* Firefox */
 	display: none;
 }
 
+@media(max-width: 360px){
+  max-height: 30rem;
+}
+
 
 `
 export const WrapperLabels = styled.div`

@@ -1,10 +1,10 @@
 
 # [Frontend Developer Test]
 
-- [Application Deployment](http://challenge-login-gavea.vercel.app/)
+- [Link Application Deployment](http://challenge-login-gavea.vercel.app/)
 
 <p align="initial">
-  Home animada com um botão de Logout dinamico que alterna a sua visualização ao clicar no card
+ Animated home with a dynamic Logout button that switches your view when you click on the cardUser
 </p>
 <p align="initial">
   <img alt="Keepalive-Uol" src="https://raw.githubusercontent.com/EmersonGomes21/repositorios-readmes/master/Gravar_2021_05_31_20_08_49_669.gif" width="200">

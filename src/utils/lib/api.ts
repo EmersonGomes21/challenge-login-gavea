@@ -11,51 +11,53 @@ if (!firebase.apps.length) {
 
 export default {
   emailPasswordRegister: async (email: string, password: string, name: string) => {
-   await firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      var user = userCredential.user;
+    await firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        var user = userCredential.user;
 
-      //atualiza o nome do usuario
-    const userCurrent =   firebase.auth().currentUser;
-    userCurrent.updateProfile({
-      displayName: name
-    }).then(function() {
+        //atualiza o nome do usuario
+        const userCurrent = firebase.auth().currentUser;
+        if (userCurrent) {
+          userCurrent.updateProfile({
+            displayName: name
+          }).then(function () {
 
-      // Update successful.
-    //  console.log('Nome Atualizado com sucesso')
-    }).catch(function(error) {
-     // console.log('ERRO AO ATUALIZAR NOME')
-    });
+            // Update successful.
+            //  console.log('Nome Atualizado com sucesso')
+          }).catch(function (error) {
+            // console.log('ERRO AO ATUALIZAR NOME')
+          });
+        }
 
-      Router.push('/signin');
-      return user
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      return  errorMessage
-    });
+        Router.push('/signin');
+        return user
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return errorMessage
+      });
   },
   emailPasswordSignin: async (email: string, password: string) => {
     await firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
 
         var user = userCredential.user;
-         console.log('Logado com sucesso', user);
-         Router.push('/home');
+        console.log('Logado com sucesso', user);
+        Router.push('/home');
 
-         if( user?.displayName !== null){
-          var nameFiltered =  user?.displayName.split(' ');
+        if (user?.displayName !== null) {
+          var nameFiltered = user?.displayName.split(' ');
 
-          if( nameFiltered !== undefined){
-            var  firstName = nameFiltered[0];
+          if (nameFiltered !== undefined) {
+            var firstName = nameFiltered[0];
             window.localStorage.setItem('@gavea-name-user', firstName);
             console.log(firstName);
 
           }
 
-         }
-         return user?.displayName;
+        }
+        return user?.displayName;
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -78,18 +80,18 @@ export default {
 
   },
 
-  authStateListener: async (urlOk : string = '/home', urlError: string = '/register') => {
-      await firebase.auth().onAuthStateChanged((user) => {
+  authStateListener: async (urlOk: string = '/home', urlError: string = '/register') => {
+    await firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         Router.push(`${urlOk}`);
-        const  res = true
+        const res = true
         return res
 
       } else {
         Router.push(`${urlError}`);
         var errorMessage = 'usuario não autenticado'
-        const  res = false
-         return res;
+        const res = false
+        return res;
       }
 
     });

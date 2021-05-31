@@ -16,12 +16,12 @@ const SignUp = () => {
   const [errorPassword, setErroPassword] = useState(false)
 
   const [dataError] = useState({
-    message: 'Erro ao cadastrar, e-mail inválido ou já conta no sistema!',
+    message: 'Erro ao cadastrar, e-mail inválido ou já conta no sistema 😥!',
     color: '#FF6900',
     messaGem: 'error'
   })
   const [dataSuccess] = useState({
-    message: 'Conta criada com sucesso!',
+    message: 'Conta criada com sucesso 🤩!',
     color: '#27cf2f',
     messaGem: 'successe'
   })

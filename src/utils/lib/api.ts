@@ -25,13 +25,11 @@ export default {
             // Update successful.
               console.log('Nome Atualizado com sucesso')
           }).catch(function (error) {
-            console.log('ERRO AO ATUALIZAR NOME')
+            // console.log('ERRO AO ATUALIZAR NOME')
           });
 
 
         }
-
-        Router.push('/signin');
         return user
       })
       .catch((error) => {

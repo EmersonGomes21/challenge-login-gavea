@@ -33,7 +33,7 @@ const Login = () => {
     messaGem: 'error'
   })
   const [dataSuccess] = useState({
-    message: 'Login efetuado com sucesso! 😍',
+    message: 'Login efetuado com sucesso 🤩!',
     color: '#27cf2f',
     messaGem: 'successe'
   })

@@ -16,6 +16,8 @@ This project uses lot of stuff as:
 - [Firebase Signout]
 - [Firebase Signup]
 - [Route Restriction]
+- [Persists Authentication JWT + Cookie]
+- [Input Validations And Server Response]
 
 
 ## Getting Started

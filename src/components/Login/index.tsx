@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import * as S from './styles'
 
 import api from 'utils/lib/api'
+import Swal from 'sweetalert2'
 const Login = (
 
 ) =>  {
@@ -21,6 +22,8 @@ const Login = (
       let res  =   await api.emailPasswordSignin(email, password);
 
       console.log('res', res);
+
+
       // const newUser = {
       //   id: u.uid,
       //   name: u.displayName,
@@ -42,7 +45,7 @@ const Login = (
 
     }
 
-     // console.log(localStorage.getItem('@user-data'));
+
 
 
   return (

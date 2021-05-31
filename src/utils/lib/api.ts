@@ -45,10 +45,15 @@ export default {
          Router.push('/home');
 
          if( user?.displayName !== null){
-         let nameFiltered =  user?.displayName.split(' ');
-         let  firstName = nameFiltered[0];
-             window.localStorage.setItem('@gavea-name-user', firstName);
-             console.log(firstName);
+          var nameFiltered =  user?.displayName.split(' ');
+
+          if( nameFiltered !== undefined){
+            var  firstName = nameFiltered[0];
+            window.localStorage.setItem('@gavea-name-user', firstName);
+            console.log(firstName);
+
+          }
+
          }
          return user?.displayName;
       })
@@ -65,7 +70,7 @@ export default {
   loGout: async () => {
     await firebase.auth().signOut().then(() => {
       console.log('Deslogado com sucesso');
-      window.localStorage.removeItem('@gavea-name-user');
+
     }).catch((error) => {
       var errorMessage = error.message;
       return errorMessage
@@ -77,11 +82,14 @@ export default {
       await firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         Router.push(`${urlOk}`);
-        return user
+        const  res = true
+        return res
+
       } else {
         Router.push(`${urlError}`);
         var errorMessage = 'usuario não autenticado'
-        return errorMessage
+        const  res = false
+         return res;
       }
 
     });

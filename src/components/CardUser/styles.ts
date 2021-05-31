@@ -1,26 +1,48 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+interface Props {
+  expand: boolean;
+}
+export const Wrapper = styled.div<Props>`
 background: #FFFFFF;
 box-shadow: 0px 12px 35px rgba(1, 66, 106, 0.2);
 border-radius: 7px;
 width: 100%;
 height: 100%;
-max-height: 80px;
+max-height: ${(props) => props.expand == true ? 120 : 80}px;
 position: relative;
 top: -6rem;
 display: flex;
 align-items: center;
 justify-content: flex-start;
+transition: all  linear 0.4s ;
 
 `
-export const Avatar = styled.img`
+export const Avatar = styled.div`
+display: flex;
+align-items: center;
 width: 5rem;
 height: 5rem;
 border-radius: 50%;
 margin-left: 1.6rem;
+background: #5998C5;
 box-shadow: 0px 3.6px 8.1px rgba(45, 56, 83, 0.2);
+text-align: center;
 `
+export const AvatarName = styled.span`
+font-family: Karla;
+font-style: normal;
+font-weight: normal;
+width: max-content;
+height: auto;
+color: #fff;
+font-size: 22px;
+line-height: 107.6%;
+margin: auto;
+
+`
+
+
 export const WrapperUserName = styled.div`
 width: max-content;
 height: 50px;
@@ -51,6 +73,14 @@ color: #748C94;
 opacity: 0.8;
 font-size: 14px;
 `
+export const Logout = styled.div`
+   width: 5px;
+   height: 5px;
+    right: 20px;
+    z-index: 1;
 
+    pointer-events: none;
+
+`
 
 

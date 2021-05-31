@@ -17,7 +17,9 @@
     "prop-types": "^15.7.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "styled-components": "5.2.1"
+    "styled-components": "5.2.1",
+    "sweetalert2": "^11.0.16",
+    "sweetalert2-react-content": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",

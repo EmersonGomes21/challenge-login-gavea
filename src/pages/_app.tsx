@@ -1,14 +1,11 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head'
-import { useEffect } from 'react';
+
 import GlobalStyles from 'styles/global'
-import api from 'utils/lib/api';
+
 function App({ Component, pageProps }: AppProps) {
 
-  useEffect(() => {
-    //Verifica se o usuario está autenticado e faz o redirecionamento
-    api.authStateListener('/home', '/');
-  }, [])
+
   return (
     <>
     <Head>
@@ -19,6 +16,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
         <meta
           name="description"
           content="Challenge Login Gavea"

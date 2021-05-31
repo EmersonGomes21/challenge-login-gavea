@@ -32,6 +32,30 @@ const GlobalStyles = createGlobalStyle`
    cursor: pointer;
   }
 
+  svg.IconSair {
+    position: absolute;
+    right: 20px;
+    top: 39%;
+    z-index: 9999;
+    transition: all linear 1s;
+    pointer-events: all !important;
+    }
+   svg.Logo {
+    width: 99px;
+    height: 45.66px;
+    margin-top: 3rem;
+
+   }
+
+
+
+
+
+
+
+
+
+
   @media(max-width: 360px){
   button[type="button"]{
     max-height: 40px;
@@ -48,12 +72,10 @@ const GlobalStyles = createGlobalStyle`
    width: 13px;
    height: 15px;
   }
-
-
-
-
-
  }
+
+
+
 
 `
 

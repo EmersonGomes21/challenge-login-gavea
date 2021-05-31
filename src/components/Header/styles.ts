@@ -11,11 +11,5 @@ align-items: center ;
 justify-content: space-between;
 position: relative;
 `
-export const Logo = styled.img`
-width: 99px;
-height: 45.66px;
-margin-top: 3rem;
 
-
-`
 

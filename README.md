@@ -10,12 +10,11 @@ This project uses lot of stuff as:
 - [TypeScript](https://www.typescriptlang.org/)
 - [NextJS](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
-- [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- [Storybook](https://storybook.js.org/)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [Husky](https://github.com/typicode/husky)
+- [PlopJS](https://plopjs.com/)
+- [Firebase Auth](https://firebase.google.com/docs/auth/web/password-auth#next_steps)
+
 
 ## Getting Started
 
@@ -36,11 +35,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 - `dev`: runs your application on `localhost:3000`
 - `build`: creates the production build version
 - `start`: starts a simple server with the build production code
-- `lint`: runs the linter in all components and pages
-- `test`: runs jest to test all components and pages
-- `test:watch`: runs jest in watch mode
-- `storybook`: runs storybook on `localhost:6006`
-- `build-storybook`: create the build version of storybook
+- `gerenate ComponentName `: creates a folder with the component name, index, styles
 
 ## Learn More
 

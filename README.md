@@ -3,6 +3,16 @@
 
 - [Application Deployment](http://challenge-login-gavea.vercel.app/)
 
+<p align="initial">
+  Home animada com um botão de Logout dinamico que alterna a sua visualização ao clicar no card
+</p>
+<p align="initial">
+  <img alt="Keepalive-Uol" src="https://raw.githubusercontent.com/EmersonGomes21/repositorios-readmes/master/Gravar_2021_05_31_20_08_49_669.gif" width="200">
+</p>
+
+
+
+
 ## What is inside?
 
 This project uses lot of stuff as:

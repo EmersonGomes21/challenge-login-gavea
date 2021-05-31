@@ -12,41 +12,49 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [error, setErro] = useState(false)
+  const [error, setErro] = useState<boolean | null>(null)
   const [errorPassword, setErroPassword] = useState(false)
+
+  const [dataError] = useState({
+    message: 'Erro ao cadastrar, e-mail inválido ou já conta no sistema!',
+    color: '#FF6900',
+    messaGem: 'error'
+  })
+  const [dataSuccess] = useState({
+    message: 'Conta criada com sucesso!',
+    color: '#27cf2f',
+    messaGem: 'successe'
+  })
 
   const createUser = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
 
-    console.log('result user', user)
-    console.log('result email', email)
-    console.log('result password', password)
-    console.log('result confirmPassword', confirmPassword)
-
-    if( password === ""  || confirmPassword === ""){
-      alert('todos os campos são requeridos!');
+    if (password === '' || confirmPassword === '') {
+      alert('todos os campos são requeridos!')
       return
     }
-
     if (password !== confirmPassword) {
-      setErroPassword(true);
-      alert('As senhas são divergentes!');
+      setErroPassword(true)
+      alert('As senhas são divergentes!')
+      return
+    } else if (password.length < 6 || confirmPassword.length < 6) {
+      alert('A senha precisa ter no mínimo 6 caracteres!')
       return
     }
-    else if( password.length < 6 || confirmPassword.length < 6){
-      alert('A senha precisa ter no mínimo 6 caracteres!');
-      return
+
+    let result = await api.emailPasswordRegister(email, password, user)
+    if (result.email) {
+      //LOGOU
+      setErro(false)
+      //depois de 3 segundos redireciona o usuario
+      window.setTimeout(() => api.loGout('/signin'), 3000)
+
     }
-
-
-    let result = await api.emailPasswordRegister(email, password, user);
-      if(result.email) {
-        console.log("REDIRECT DO SIGNUP", result.email)
-      api.loGout('/signin');
-     }
-     //desloga
-
-
+    else{
+      setErro(true);
+      window.setTimeout(() => setErro(null), 4000)
+    }
+    //desloga
   }
 
   return (
@@ -87,6 +95,17 @@ const SignUp = () => {
             onClick={createUser}
             buttonText="Cadastrar"
           />
+
+          <S.Alert>
+            <S.Span className={(error && error !== null) ? `register-error` : `hide`}>
+              {dataError.message}
+            </S.Span>
+
+            <S.Span className={(!error && error !== null) ? `register-success` : `hide`}>
+
+              {dataSuccess.message}
+            </S.Span>
+          </S.Alert>
         </S.Form>
       </Main>
       <FooterRedirect href="/signin" primaryText="já" name="Faça login" />

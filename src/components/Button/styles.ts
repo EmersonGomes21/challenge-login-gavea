@@ -12,6 +12,10 @@ background-color: #FF6900 ;
 font-size: 15px;
 border: none;
 border-radius: 4px;
+
+@media(max-width: 360px){
+max-height: 40px;
+}
 `
 
 export const ButtonTitle = styled.span<PropsButtonTitle>`

@@ -18,6 +18,8 @@ const Input = ({
   classIconType?: string
   classIconPassword?: string
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  onFocus?: (event: ChangeEvent<HTMLInputElement>) => void
+  onBlur?: (event: ChangeEvent<HTMLInputElement>) => void
 }) => {
 const [ togglePassword, setTogglePassword] = useState(false);
 const [ typeToggle, setTypeToggle] = useState('password');

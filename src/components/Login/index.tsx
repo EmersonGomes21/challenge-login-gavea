@@ -7,7 +7,7 @@ import * as S from './styles'
 import cookie from 'js-cookie'
 import api from 'utils/lib/api'
 import firebase from 'firebase'
-import  Router  from 'next/router'
+import Router from 'next/router'
 
 interface User {
   uid: string
@@ -22,20 +22,30 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<null | boolean>(null)
-  const [success, setSuccess] = useState(false)
   const [user, setUser] = useState<User | null | boolean>(null)
-  const [loading, setLoading] = useState(true)
   const [userLogado, setUserLogado] = useState<string | undefined | null>('')
+  const [focus, setFocus] = useState<null | boolean>(null)
+
+  const [dataError] = useState({
+    message:
+      'Erro ao fazer login, e-mail inválido ou mau funcionamento do servidor  😥!',
+    color: '#FF6900',
+    messaGem: 'error'
+  })
+  const [dataSuccess] = useState({
+    message: 'Login efetuado com sucesso! 😍',
+    color: '#27cf2f',
+    messaGem: 'successe'
+  })
 
   const formatUser = async (user: any) => ({
     uid: user.uid,
     email: user.email,
     name: user.displayName,
     token: user.za,
-    provider:  user.providerData[0].providerId,
+    provider: user.providerData[0].providerId,
     photoUrl: user.photoURL
   })
-
 
   const handleUser = async (currentUser: any) => {
     if (currentUser) {
@@ -60,43 +70,32 @@ const Login = () => {
     }
   }
 
-
-
-
-
-
-
-
   const loginEmailPassword = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
 
     if (password === '' || email === '') {
       alert('todos os campos são requeridos!')
-     return
-    }
-
-   else  if (password.length < 6) {
+      return
+    } else if (password.length < 6) {
       alert('A senha precisa ter no mínimo 6 caracteres!')
       return
     }
 
-    var res = await api.emailPasswordSignin(email, password);
+    var res = await api.emailPasswordSignin(email, password)
 
     if (!res || res == undefined || res == null) {
-      setSuccess(false)
-      console.log(' NÃO LOGOU!')
-      // alert('ERRO AO LOGAR');
+      setError(true)
+      //oculta a mensagem após 3 segundos
+      window.setTimeout(() => setError(null), 3000)
       return
-     }
-      else {
-        handleUser(res);
-        Router.push('/home');
+    } else {
+      handleUser(res)
+      setError(false)
+      window.setTimeout(() => Router.push('/home'), 3000)
     }
 
     console.log('resLogin', res)
   }
-
-
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onIdTokenChanged(handleUser)
@@ -105,7 +104,7 @@ const Login = () => {
 
   useEffect(() => {
     const nameUser = window.localStorage.getItem('@gavea-name-user')
-    setUserLogado(nameUser);
+    setUserLogado(nameUser)
     if (
       !nameUser ||
       nameUser == undefined ||
@@ -114,7 +113,7 @@ const Login = () => {
     ) {
       handleUser(false)
     }
-  }, [userLogado]);
+  }, [userLogado])
 
   return (
     <>
@@ -137,8 +136,23 @@ const Login = () => {
             icon="password"
             classInput="last"
             onChange={(e) => setPassword(e.target.value)}
+            onFocus={(e) => setFocus(true)}
           />
           <Button id="button-login" onClick={loginEmailPassword} />
+
+          <S.Alert>
+            <S.Span
+              className={error && error !== null ? `register-error` : `hide`}
+            >
+              {dataError.message}
+            </S.Span>
+
+            <S.Span
+              className={!error && error !== null ? `register-success` : `hide`}
+            >
+              {dataSuccess.message}
+            </S.Span>
+          </S.Alert>
         </S.Form>
       </Main>
 

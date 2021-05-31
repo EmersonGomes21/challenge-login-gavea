@@ -21,6 +21,7 @@ function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Challenge Login Gavea"
         />
+
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />

@@ -23,9 +23,9 @@ export default {
           }).then(function () {
 
             // Update successful.
-            //  console.log('Nome Atualizado com sucesso')
+              console.log('Nome Atualizado com sucesso')
           }).catch(function (error) {
-            // console.log('ERRO AO ATUALIZAR NOME')
+            console.log('ERRO AO ATUALIZAR NOME')
           });
         }
 
@@ -39,25 +39,25 @@ export default {
       });
   },
   emailPasswordSignin: async (email: string, password: string) => {
-    await firebase.auth().signInWithEmailAndPassword(email, password)
+     const result = await firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-
         var user = userCredential.user;
-        console.log('Logado com sucesso', user);
+       // console.log('Logado com sucesso', user);
         Router.push('/home');
 
+        //Seta o primeiro nome do usuario logado no localstorage
         if (user?.displayName !== null) {
           var nameFiltered = user?.displayName.split(' ');
 
           if (nameFiltered !== undefined) {
             var firstName = nameFiltered[0];
             window.localStorage.setItem('@gavea-name-user', firstName);
-            console.log(firstName);
 
           }
 
         }
-        return user?.displayName;
+
+        return user;
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -66,13 +66,14 @@ export default {
         console.log('ERROR MESSAGE', errorMessage);
         return errorMessage
       });
-
+      return result;
   },
 
   loGout: async () => {
     await firebase.auth().signOut().then(() => {
-      console.log('Deslogado com sucesso');
-
+      window.localStorage.removeItem('@gavea-name-user');
+      window.localStorage.removeItem('@gavea-logado');
+       Router.push('/');
     }).catch((error) => {
       var errorMessage = error.message;
       return errorMessage
@@ -80,18 +81,14 @@ export default {
 
   },
 
-  authStateListener: async (urlOk: string = '/home', urlError: string = '/register') => {
-    await firebase.auth().onAuthStateChanged((user) => {
+  //evento de "escuta" de usuario logado
+  authStateListener: async () => {
+        firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        Router.push(`${urlOk}`);
-        const res = true
-        return res
-
+          window.localStorage.setItem('@gavea-logado', user.displayName ? user.displayName : '')
       } else {
-        Router.push(`${urlError}`);
-        var errorMessage = 'usuario não autenticado'
-        const res = false
-        return res;
+          window.localStorage.removeItem('@gavea-logado');
+
       }
 
     });

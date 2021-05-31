@@ -4,8 +4,9 @@ import * as S from './styles'
 import IconSair from '../Icons/IconSair';
 const CardUser = () => {
   const [expand, setExpand] = useState(false)
-  const [name, setName] = useState<string | null>('Francisco')
+  const [name, setName] = useState<string | null>('')
   useEffect(() => {
+    //busca o nome do usuario logado
     const getNameUser = () => {
       const name = window.localStorage.getItem('@gavea-name-user')
       setName(name)
@@ -16,6 +17,7 @@ const CardUser = () => {
   return (
     <S.Wrapper expand={expand} onClick={() => setExpand(!expand)}>
       <S.Avatar >
+                 {/* pega a primeira e segunda letra no name*/}
         <S.AvatarName>{name ? `${name[0]}${name[1]}` : ''}</S.AvatarName>
       </S.Avatar>
       <S.WrapperUserName>

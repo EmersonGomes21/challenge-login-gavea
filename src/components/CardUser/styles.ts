@@ -9,7 +9,7 @@ box-shadow: 0px 12px 35px rgba(1, 66, 106, 0.2);
 border-radius: 7px;
 width: 100%;
 height: 100%;
-max-height: ${(props) => props.expand == true ? 120 : 80}px;
+max-height: ${(props) => props.expand == true ? 100 : 80}px;
 position: relative;
 top: -6rem;
 display: flex;

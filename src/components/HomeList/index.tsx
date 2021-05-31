@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import CardCommodities from 'components/CardCommodities'
 import CardUser from 'components/CardUser'
 import Header from 'components/Header'
 import Main from 'components/Main'
 import * as S from './styles'
 import data from './content'
+import ProtectRoute from 'components/ProtectRoute'
 
 const HomeList = () => {
   return (
-    <>
+    <ProtectRoute>
       <Header />
       <Main justify="flex-start">
         <CardUser />
@@ -32,7 +33,8 @@ const HomeList = () => {
           ))}
         </S.WrapperCardCommodities>
       </Main>
-    </>
+
+     </ProtectRoute>
   )
 }
 

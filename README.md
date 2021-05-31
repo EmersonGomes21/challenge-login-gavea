@@ -14,6 +14,10 @@ This project uses lot of stuff as:
 - [Prettier](https://prettier.io/)
 - [PlopJS](https://plopjs.com/)
 - [Firebase Auth](https://firebase.google.com/docs/auth/web/password-auth#next_steps)
+- [Firebase Sigin]
+- [Firebase Signout]
+- [Firebase Signup]
+- [Route Restriction]
 
 
 ## Getting Started

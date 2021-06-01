@@ -20,7 +20,7 @@ export const Form = styled.form`
 display: flex;
 flex-direction: column;
 width: 100%;
-height: 50%;
+height: 56%;
 justify-content: start;
 margin-top: 30px;
 

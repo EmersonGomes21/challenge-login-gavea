@@ -1,7 +1,7 @@
 
 # [Frontend Developer Test]
 
-- [Link Application Deployment](http://challenge-login-gavea.vercel.app/)
+- [Link Application Deployment (<b>Mobile devices Only</b>)](http://challenge-login-gavea.vercel.app/)
 
 <p align="initial">
  Animated home with a dynamic Logout button that switches your view when you click on the cardUser
